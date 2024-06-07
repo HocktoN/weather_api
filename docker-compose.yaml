@@ -1,0 +1,60 @@
+version: '3.3'
+
+services:
+  django_api:
+    container_name: backend
+    build: ./weather
+    volumes:
+      - static:/static
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+      - redis
+
+  db:
+    image: postgres:latest
+    container_name: postgres_db
+    environment:
+      POSTGRES_DB: your_db_name
+      POSTGRES_USER: your_db_user
+      POSTGRES_PASSWORD: your_db_password
+    ports:
+      - "5432:5432"
+
+  redis:
+    container_name: redis
+    image: redis:latest
+
+  celery:
+    container_name: celery_worker
+    build: ./weather
+    entrypoint: celery
+    command: -A weather worker --loglevel=info
+    depends_on:
+      - db
+      - redis
+      - django_api
+
+  celery_beat:
+    container_name: celery_beat
+    build: ./weather
+    entrypoint: celery
+    command: -A weather beat --loglevel=info
+    depends_on:
+      - db
+      - redis
+      - django_api
+
+  nginx:
+    container_name: nginx
+    build: ./nginx
+    volumes:
+      - static:/static
+    ports:
+      - "8080:80"
+    depends_on:
+      - django_api
+
+volumes:
+  static:
