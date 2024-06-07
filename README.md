@@ -39,7 +39,7 @@
   ![login](readme_images/login.png)
 
 ## - <span style="color:red">**_api/v1/schedule-job/_**</span>
-Zamanlı iş oluşturmak için  bu endpinte get isteği atmalısınız.
+Zamanlı iş oluşturmak için  bu endpointe get isteği atmalısınız.
 
   ![schedule-job](readme_images/schedule.png)
   ![schedule-job](readme_images/celerytask.png)
