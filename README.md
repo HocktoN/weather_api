@@ -33,42 +33,40 @@
 
 ## API Dökümantasyonu
 
-### - **_api/v1/rest-auth/login/_**
+## - <span style="color:red">**_api/v1/rest-auth/login/_**</span>
 (POST): Kullanıcı girişi yapmak için kullanılır. Kullanıcı adı ve şifre ile giriş yapılır.
 
   ![login](readme_images/login.png)
 
-### - **_api/v1/schedule-job/_**
+## - <span style="color:red">**_api/v1/schedule-job/_**</span>
 Zamanlı iş oluşturmak için  bu endpinte get isteği atmalısınız.
 
   ![schedule-job](readme_images/schedule.png)
   ![schedule-job](readme_images/celerytask.png)
-### - **_api/v1/weather/_**
 
+## - <span style="color:red">**_api/v1/weather/_**</span>
 Tüm hava durumu verilerini getirir ve yeni veri eklemek için kullanılır. Sayfalama için default 10 ancak page_size parametresi ile sayfa boyutunu değiştirebilirsiniz.
 
   ![weather-get](readme_images/weather.png)
 
-### - **_api/v1/weather/id/_**
-
+## - <span style="color:red">**_api/v1/weather/id/_**</span>
 Veritabanında bulunan verileri id'ye göre getirir, günceller ve siler.
 
   ![weather-id](readme_images/weather_id.png)
 
-### - **_api/v1/average/days/_**
-
+## - <span style="color:red">**_api/v1/average/days/_**</span>
 Belirli bir gün sayısına göre ortalama sıcaklık değerlerini getirir.
 
   ![average-days](readme_images/average.png)
   
-### - **_api/v1/average/filter/_**
+## - <span style="color:red">**_api/v1/filter/_**</span>
 Belirli bir tarih aralığına göre sıcaklık değerlerini getirir.
 start_date ve end_date parametrelerini göndermelisiniz.
 Tarh formatı: YYYY-MM-DD, page_size parametresi ile sayfa boyutunu değiştirebilirsiniz.
 
   ![average-filter](readme_images/filter.png)
 
-### - **_api/v1/openmeteo-to-db/_**
+## - <span style="color:red">**_api/v1/openmeteo-to-db/_**</span>
 Open-meteo api'sinden toplu veri çekip veritabanına kaydetmek için kullanılır.
 Tarih formatı: YYYY-MM-DD,
 start_date ve end_date parametrelerini göndermelisiniz.
